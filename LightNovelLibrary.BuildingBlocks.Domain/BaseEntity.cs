@@ -4,7 +4,7 @@ public abstract class BaseEntity : IEntity
 {
     private IList<IDomainEvent> _events = new List<IDomainEvent>();
 
-    public IList<IDomainEvent> DomainEvents => throw new NotImplementedException();
+    public IList<IDomainEvent> DomainEvents => _events;
 
     public void AddDomainEvent(IDomainEvent domainEvent)
     {

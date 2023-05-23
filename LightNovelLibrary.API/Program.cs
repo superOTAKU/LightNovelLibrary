@@ -7,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddValidatorsFromAssemblies(Assembly.GetExecutingAssembly()
         .GetReferencedAssemblies().Select(Assembly.Load));
+
+// FIXME pipeline behavior会应用到所有的handler...
+// 可以考虑自定义特性，在behavior中，通过特性判断handler是否拦截
 builder.Services.AddMediatR(cfg =>
 {
     //获取当前程序集引用的其他程序集，并执行依赖注入

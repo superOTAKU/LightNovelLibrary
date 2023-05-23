@@ -1,9 +1,11 @@
-﻿namespace LightNovelLibrary.Modules.LightNovel.Domain;
+﻿using LightNovelLibrary.BuildingBlocks.Domain;
+
+namespace LightNovelLibrary.Modules.LightNovel.Domain;
 
 /// <summary>
-/// 小说
+/// 小说，聚合根
 /// </summary>
-public class LightNovel
+public class LightNovel : BaseEntity, IAggregateRoot
 {
     public int LightNovelId { get; set; }
 
