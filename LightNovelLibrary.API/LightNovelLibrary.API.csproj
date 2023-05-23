@@ -7,8 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+    <PackageReference Include="Scrutor" Version="4.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LightNovelLibrary.BuildingBlocks.Domain\LightNovelLibrary.BuildingBlocks.Domain.csproj" />
+    <ProjectReference Include="..\LightNovelLibrary.Modules.Attachment\LightNovelLibrary.Modules.Attachment.csproj" />
+    <ProjectReference Include="..\LightNovelLibrary.Modules.LightNovel.Application\LightNovelLibrary.Modules.LightNovel.Application.csproj" />
+    <ProjectReference Include="..\LightNovelLibrary.Modules.LightNovel.Domain\LightNovelLibrary.Modules.LightNovel.Domain.csproj" />
   </ItemGroup>
 
 </Project>

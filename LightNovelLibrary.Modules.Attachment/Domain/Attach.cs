@@ -1,29 +1,31 @@
-﻿namespace LightNovelLibrary.Modules.Attachment.Domain;
+﻿using LightNovelLibrary.BuildingBlocks.Domain;
 
-public class Attach
+namespace LightNovelLibrary.Modules.Attachment.Domain;
+
+public class Attach : BaseEntity
 {
     public long Id { get; set; }
 
-    public string? Name { get; set; }
+    public string Name { get; set; } = string.Empty;
 
-    public string? MimeType { get; set; }
+    public string MimeType { get; set; } = string.Empty;
 
     public int Size { get; set; }
 
     /// <summary>
     /// 代表一个协议，通过此协议可以获取到具体的附件
     /// </summary>
-    public string? Url { get; set; }
+    public string Url { get; set; } = string.Empty;
 
     /// <summary>
     /// 缩略图文件类型
     /// </summary>
-    public string? ThumbnailMimeType { get; set; }
+    public string ThumbnailMimeType { get; set; } = string.Empty;
 
     /// <summary>
     /// 缩略图下载地址
     /// </summary>
-    public string? ThumbnailUrl { get; set; }
+    public string ThumbnailUrl { get; set; } = string.Empty;
 
     /// <summary>
     /// 缩略图大小
@@ -45,7 +47,7 @@ public class Attach
     /// <summary>
     /// 逻辑删除标志
     /// </summary>
-    public bool? IsDeleted { get; set; }
+    public bool IsDeleted { get; set; } = false;
 
     
 }

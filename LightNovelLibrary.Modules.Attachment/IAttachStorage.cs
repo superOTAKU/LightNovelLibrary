@@ -19,7 +19,7 @@ public interface IAttachStorage
     /// </summary>
     /// <param name="url"></param>
     /// <returns>删除是否成功</returns>
-    bool DeleteAttach(string url);
+    void DeleteAttach(string url);
 
     /// <summary>
     /// 根据url获取二进制附件流
