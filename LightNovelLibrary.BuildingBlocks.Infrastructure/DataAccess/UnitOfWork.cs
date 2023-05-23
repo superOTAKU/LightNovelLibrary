@@ -21,7 +21,6 @@ public class UnitOfWork : IUnitOfWork
             .Select(e => e.Entity)
             .OfType<IEntity>()
             .SelectMany(e => e.PollDomainEvents())
-            .ToList()
             .Select(e => _mediator.Publish(e)));
         await _context.SaveChangesAsync(cancellationToken);
     }
