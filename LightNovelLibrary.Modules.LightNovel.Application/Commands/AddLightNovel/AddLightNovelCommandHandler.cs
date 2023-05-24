@@ -29,7 +29,7 @@ public class AddLightNovelCommandHandler : IRequestHandler<AddLightNovelCommand,
             Name = request.Name,
             Status = request.Status,
             AuthorId = request.AuthorId,
-            Tags = _repository.GetTags(request.TagIds).ToList()
+            LightNovelTags = request.TagIds.Select(tagId => new LightNovelTag { TagId = tagId }).ToList()
         };
         _repository.Add(lightNovel);
         await _repository.UnitOfWork.CommitAsync(cancellationToken);

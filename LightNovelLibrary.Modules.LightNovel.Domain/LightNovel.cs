@@ -19,8 +19,6 @@ public class LightNovel : BaseEntity, IAggregateRoot
 
     public Author? Author { get; set; }
 
-    public List<Tag> Tags { get; set; } = new List<Tag>();
-
     public List<LightNovelTag> LightNovelTags { get; set; } = new List<LightNovelTag>();
 
     public List<Edition> Editions { get; set; } = new List<Edition>();
