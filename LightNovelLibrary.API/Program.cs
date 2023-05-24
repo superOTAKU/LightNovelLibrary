@@ -1,6 +1,8 @@
 using FluentValidation;
 using LightNovelLibrary.BuildingBlocks.Infrastructure.Behaviors;
+using LightNovelLibrary.BuildingBlocks.Infrastructure.DataAccess;
 using LightNovelLibrary.BuildingBlocks.Infrastructure.Rest;
+using LightNovelLibrary.Modules.LightNovel.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using System.Reflection;
@@ -42,5 +44,15 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseExceptionHandler();
+
+// Ìî³ä³õÊ¼Êý¾Ý
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    if (context.Authors.Count() == 0)
+    {
+        context.Authors.Add(new Author { AuthorId = 1, Name = "Î²Ìï", Gender = Gender.Male });
+    }
+}
 
 app.Run();

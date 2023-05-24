@@ -35,24 +35,5 @@ public class LightNovelController : ControllerBase
         return await _mediator.Send(command);
     }
 
-    [HttpGet("error")]
-    public void ErrorTest()
-    {
-        throw new Exception("test!!!");
-    }
-
-    [HttpGet("error2")]
-    public void ErrorTest2()
-    {
-        throw new TestBusinessException("test business exception!!!");
-    }
-
 }
 
-[HttpStatus(HttpStatusCode.NotFound)]
-public class TestBusinessException : BusinessException {
-    public TestBusinessException(string? message) : base(1, message)
-    {
-        
-    }
-}

@@ -3,7 +3,6 @@ namespace LightNovelLibrary.BuildingBlocks.Infrastructure.Rest;
 
 /// <summary>
 /// 自定义业务异常
-/// FIXME 是否在异常中携带Http状态码信息呢？？？
 /// </summary>
 public abstract class BusinessException : Exception
 {
