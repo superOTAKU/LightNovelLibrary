@@ -23,11 +23,11 @@ public class AddLightNovelCommandHandler : IRequestHandler<AddLightNovelCommand,
         {
             throw new TagNotExistException(request.TagIds);
         }
-
         var lightNovel = new Domain.LightNovel
         {
             Name = request.Name,
             Status = request.Status,
+            UpdateTime = DateTime.UtcNow,
             AuthorId = request.AuthorId,
             LightNovelTags = request.TagIds.Select(tagId => new LightNovelTag { TagId = tagId }).ToList()
         };

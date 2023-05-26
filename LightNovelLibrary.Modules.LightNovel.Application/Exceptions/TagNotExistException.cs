@@ -1,8 +1,10 @@
-﻿using Rest = LightNovelLibrary.BuildingBlocks.Infrastructure.Rest;
+﻿using LightNovelLibrary.BuildingBlocks.Infrastructure.Rest;
+using Rest = LightNovelLibrary.BuildingBlocks.Infrastructure.Rest;
 
 namespace LightNovelLibrary.Modules.LightNovel.Application.Exceptions;
 
-public class TagNotExistException : Rest.BusinessException
+[HttpStatus(System.Net.HttpStatusCode.NotFound)]
+public class TagNotExistException : BusinessException
 {
 
     public TagNotExistException(IEnumerable<int> tagIds)

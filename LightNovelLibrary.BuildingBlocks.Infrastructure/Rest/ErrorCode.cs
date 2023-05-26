@@ -7,6 +7,9 @@ public enum ErrorCode : int
 {
    AuthorNotExists = 1,
    TagNotExist = 2,
-   LightNovelNotExists = 3
+   LightNovelNotExists = 3,
+   UserNameExists = 4,
+   UserNameNotExists = 5,
+   PasswordNotMatch = 6,
 }
 

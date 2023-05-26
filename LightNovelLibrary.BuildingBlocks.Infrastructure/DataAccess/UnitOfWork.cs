@@ -1,14 +1,15 @@
 ﻿using LightNovelLibrary.BuildingBlocks.Domain;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace LightNovelLibrary.BuildingBlocks.Infrastructure.DataAccess;
 
-public class UnitOfWork : IUnitOfWork
+public abstract class UnitOfWork : IUnitOfWork
 {
-    private readonly AppDbContext _context;
+    private readonly DbContext _context;
     private readonly IMediator _mediator;
 
-    public UnitOfWork(AppDbContext context, IMediator mediator)
+    public UnitOfWork(DbContext context, IMediator mediator)
     {
         _context = context;
         _mediator = mediator;

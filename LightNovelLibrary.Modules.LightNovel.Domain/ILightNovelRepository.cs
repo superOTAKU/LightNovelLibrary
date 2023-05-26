@@ -1,10 +1,15 @@
 ﻿using LightNovelLibrary.BuildingBlocks.Domain;
+using LightNovelLibrary.BuildingBlocks.Domain.Pagination;
 
 namespace LightNovelLibrary.Modules.LightNovel.Domain;
 
 public interface ILightNovelRepository : IRepository
 {
     LightNovel? GetById(int lightNovelId);
+
+    LightNovel? GetById(int lightNovelId, GetLightNovelOptions? options);
+
+    PaginationResult<LightNovel> GetLightNovelPage(LightNovelPaginationQuery query);
 
     void Add(LightNovel lightNovel);
 
@@ -18,3 +23,17 @@ public interface ILightNovelRepository : IRepository
 
 }
 
+/// <summary>
+/// 获取Novel选项
+/// </summary>
+public class GetLightNovelOptions
+{
+    public bool IncludeTags { get; set; } = true;
+
+    public bool IncludeAuthor { get; set; } = true;
+}
+
+public class LightNovelPaginationQuery : PaginationQuery
+{
+    public int? AuthorId { get; set;}
+}

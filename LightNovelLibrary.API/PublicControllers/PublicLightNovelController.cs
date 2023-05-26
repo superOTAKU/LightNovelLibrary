@@ -1,20 +1,21 @@
-﻿using LightNovelLibrary.BuildingBlocks.Infrastructure.Rest;
+﻿using LightNovelLibrary.BuildingBlocks.Domain.Pagination;
 using LightNovelLibrary.Modules.LightNovel.Application.Commands.AddLightNovel;
 using LightNovelLibrary.Modules.LightNovel.Application.Dtos;
 using LightNovelLibrary.Modules.LightNovel.Application.Queries.GetLightNovelById;
+using LightNovelLibrary.Modules.LightNovel.Application.Queries.GetLightNovelPage;
+using LightNovelLibrary.Modules.LightNovel.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
-namespace LightNovelLibrary.API.Controllers;
+namespace LightNovelLibrary.API.PublicControllers;
 
 [ApiController]
 [Route("[controller]")]
-public class LightNovelController : ControllerBase
+public class PublicLightNovelController : ControllerBase
 {
     private readonly IMediator _mediator;
 
-    public LightNovelController(IMediator mediator)
+    public PublicLightNovelController(IMediator mediator)
     {
         _mediator = mediator;
     }
@@ -22,10 +23,18 @@ public class LightNovelController : ControllerBase
     [HttpGet("{id}")]
     public async Task<LightNovelDetailDto> GetById(int id)
     {
-        // TODO: 异常处理，参数校验...
         return await _mediator.Send(new GetLightNovelByIdQuery
         {
             LightNovelId = id
+        });
+    }
+
+    [HttpPost("page")]
+    public async Task<PaginationResult<LightNovelListDto>> GetPage([FromBody]LightNovelPaginationQuery query)
+    {
+        return await _mediator.Send(new GetLightNovelPageQuery
+        {
+            Query = query
         });
     }
 

@@ -9,6 +9,8 @@ public class Tag
 
     public string Name { get; set; } = string.Empty;
 
-    public List<LightNovelTag> LightNovelTags { get; set; } = new List<LightNovelTag>();
+    public ICollection<LightNovel> LightNovels { get; set; } = new List<LightNovel>();
+
+    public ICollection<LightNovelTag> LightNovelTags { get; set; } = new List<LightNovelTag>();
 }
 

@@ -11,6 +11,8 @@ public class Author
 
     public Gender Gender { get; set; }
 
+    public ICollection<LightNovel> LightNovels { get; set; } = new List<LightNovel>();
+
 }
 
 public enum Gender

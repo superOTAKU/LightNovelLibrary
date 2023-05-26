@@ -11,6 +11,7 @@ public class AddLightNovelCommandValidator : AbstractValidator<AddLightNovelComm
         RuleFor(c => c.Status).IsInEnum();
         RuleFor(c => c.AuthorId).NotEmpty();
         RuleFor(c => c.TagIds).NotNull();
+    }
 
 }
 

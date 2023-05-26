@@ -7,12 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="PrivateKey.Pem" />
+    <None Remove="PublicKey.Pem" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="PrivateKey.Pem" />
+    <EmbeddedResource Include="PublicKey.Pem" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.5.2" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
     <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
     <PackageReference Include="Scrutor" Version="4.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.30.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +34,10 @@
     <ProjectReference Include="..\LightNovelLibrary.Modules.Attachment\LightNovelLibrary.Modules.Attachment.csproj" />
     <ProjectReference Include="..\LightNovelLibrary.Modules.LightNovel.Application\LightNovelLibrary.Modules.LightNovel.Application.csproj" />
     <ProjectReference Include="..\LightNovelLibrary.Modules.LightNovel.Domain\LightNovelLibrary.Modules.LightNovel.Domain.csproj" />
+    <ProjectReference Include="..\LightNovelLibrary.Modules.LightNovel.Infrastructure\LightNovelLibrary.Modules.LightNovel.Infrastructure.csproj" />
+    <ProjectReference Include="..\LightNovelLibrary.Modules.User.Application\LightNovelLibrary.Modules.User.Application.csproj" />
+    <ProjectReference Include="..\LightNovelLibrary.Modules.User.Domain\LightNovelLibrary.Modules.User.Domain.csproj" />
+    <ProjectReference Include="..\LightNovelLibrary.Modules.User.Infrastructure\LightNovelLibrary.Modules.User.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

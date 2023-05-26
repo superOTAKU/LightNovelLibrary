@@ -32,7 +32,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightNovelLibrary.Modules.L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightNovelLibrary.BuildingBlocks.Infrastructure", "LightNovelLibrary.BuildingBlocks.Infrastructure\LightNovelLibrary.BuildingBlocks.Infrastructure.csproj", "{FBE614D2-BCF8-4E03-89E2-3780D9866267}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightNovelLibrary.Modules.LightNovel.Infrastructure", "LightNovelLibrary.Modules.LightNovel.Infrastructure\LightNovelLibrary.Modules.LightNovel.Infrastructure.csproj", "{130542B4-5920-48E8-91B5-ABC7B9A7D366}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightNovelLibrary.Modules.LightNovel.Infrastructure", "LightNovelLibrary.Modules.LightNovel.Infrastructure\LightNovelLibrary.Modules.LightNovel.Infrastructure.csproj", "{130542B4-5920-48E8-91B5-ABC7B9A7D366}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{55B95C4F-0005-494F-924B-974D997D78C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightNovelLibrary.Modules.User.Domain", "LightNovelLibrary.Modules.User.Domain\LightNovelLibrary.Modules.User.Domain.csproj", "{6F02519D-3584-429E-A84D-CC3304E28D18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightNovelLibrary.Modules.User.Application", "LightNovelLibrary.Modules.User.Application\LightNovelLibrary.Modules.User.Application.csproj", "{E9382501-F401-4E25-A036-97374BADDB20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightNovelLibrary.Modules.User.Infrastructure", "LightNovelLibrary.Modules.User.Infrastructure\LightNovelLibrary.Modules.User.Infrastructure.csproj", "{9F407BCD-4248-43FD-8557-848A04530104}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +76,18 @@ Global
 		{130542B4-5920-48E8-91B5-ABC7B9A7D366}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{130542B4-5920-48E8-91B5-ABC7B9A7D366}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{130542B4-5920-48E8-91B5-ABC7B9A7D366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F02519D-3584-429E-A84D-CC3304E28D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F02519D-3584-429E-A84D-CC3304E28D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F02519D-3584-429E-A84D-CC3304E28D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F02519D-3584-429E-A84D-CC3304E28D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9382501-F401-4E25-A036-97374BADDB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9382501-F401-4E25-A036-97374BADDB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9382501-F401-4E25-A036-97374BADDB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9382501-F401-4E25-A036-97374BADDB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F407BCD-4248-43FD-8557-848A04530104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F407BCD-4248-43FD-8557-848A04530104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F407BCD-4248-43FD-8557-848A04530104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F407BCD-4248-43FD-8557-848A04530104}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +105,10 @@ Global
 		{AD01A411-C10A-4C92-8C37-24DF199B65D2} = {C6AC6C4D-6882-4F78-AA42-2B9DD3C5DB55}
 		{FBE614D2-BCF8-4E03-89E2-3780D9866267} = {762AFFA6-00B1-4969-98B3-F71E6F2AEEB5}
 		{130542B4-5920-48E8-91B5-ABC7B9A7D366} = {C6AC6C4D-6882-4F78-AA42-2B9DD3C5DB55}
+		{55B95C4F-0005-494F-924B-974D997D78C7} = {D89CC466-3670-4772-8FB3-F987EAA8B8AE}
+		{6F02519D-3584-429E-A84D-CC3304E28D18} = {55B95C4F-0005-494F-924B-974D997D78C7}
+		{E9382501-F401-4E25-A036-97374BADDB20} = {55B95C4F-0005-494F-924B-974D997D78C7}
+		{9F407BCD-4248-43FD-8557-848A04530104} = {55B95C4F-0005-494F-924B-974D997D78C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6FDBA43-6717-476B-B6A4-8BB83B29B93C}

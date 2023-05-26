@@ -17,13 +17,15 @@ public class LightNovel : BaseEntity, IAggregateRoot
 
     public int AuthorId { get; set; }
 
-    public Author? Author { get; set; }
+    public Author Author { get; set; } = null!;
 
-    public List<LightNovelTag> LightNovelTags { get; set; } = new List<LightNovelTag>();
+    public ICollection<Tag> Tags { get; set; } = new List<Tag>();
 
-    public List<Edition> Editions { get; set; } = new List<Edition>();
+    public ICollection<LightNovelTag> LightNovelTags { get; set; } = new List<LightNovelTag>();
 
-    public List<Chaptor> Chaptors { get; set; } = new List<Chaptor>();
+    public ICollection<Edition> Editions { get; set; } = new List<Edition>();
+
+    public ICollection<Chaptor> Chaptors { get; set; } = new List<Chaptor>();
 }
 
 public enum LightNovelStatus

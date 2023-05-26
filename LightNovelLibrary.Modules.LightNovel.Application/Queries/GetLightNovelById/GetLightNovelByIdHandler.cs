@@ -26,6 +26,7 @@ public class GetLightNovelByIdHandler : IRequestHandler<GetLightNovelByIdQuery, 
             LightNovelId = lightNovel.LightNovelId,
             Name = lightNovel.Name,
             Status = lightNovel.Status,
+            UpdateTime = lightNovel.UpdateTime,
             Author = new AuthorDto
             {
                 AuthorId = lightNovel.AuthorId,
