@@ -2,6 +2,6 @@
 
 public class SecurityClaimTypes
 {
-    public const string PrincipleType = "PrincipleType";
+    public const string PrincipleType = "PrincipalType";
 }
 

@@ -6,6 +6,12 @@
 /// </summary>
 public interface IRole
 {
+    //角色类型
+    string Category { get; }
+
+    //角色名称
+    string Name { get; }
+
     /// <summary>
     ///   当前角色是否包含目标角色
     /// </summary>
@@ -23,6 +29,13 @@ public interface IRole
         UserRoles.User,
         AdminRoles.Admin
     };
+
+    static IDictionary<string, IRole> RoleDictionary = new Dictionary<string, IRole>();
+
+    static IRole GetRole(string roleName)
+    {
+        return RoleDictionary[roleName];
+    }
 
 }
 

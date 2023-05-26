@@ -2,6 +2,6 @@
 
 public class AdminRoles
 {
-    public static readonly IRole Admin = new Role();
+    public static readonly IRole Admin = new Role(PrincipalType.Admin, "Admin");
 }
 

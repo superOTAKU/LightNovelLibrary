@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using System.Security.Claims;
 
 namespace LightNovelLibrary.BuildingBlocks.Infrastructure.Security.Authorization;
 
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-public class UserPrincipleAttribute : Attribute, IAuthorizationFilter
+public class PrincipleRoleAttribute : Attribute, IAuthorizationFilter
 {
     private readonly string _principalType;
     private readonly string _role;
 
-    public UserPrincipleAttribute(string principalType, string role)
+    public PrincipleRoleAttribute(string principalType, string role)
     {
         _principalType = principalType;
         _role = role;
@@ -35,7 +36,13 @@ public class UserPrincipleAttribute : Attribute, IAuthorizationFilter
             context.Result = new ForbidResult();
             return;
         }
-        //检查角色
+        //检查当前拥有的角色是否符合要求
+        var roles = claims.Where(c => c.Type == ClaimTypes.Role).Select(c => IRole.GetRole(c.Value)).ToList();
+        if (!roles.Any(r => r.Includes(IRole.GetRole(_role)))) 
+        {
+            context.Result = new ForbidResult();
+            return;
+        }
     }
 }
 

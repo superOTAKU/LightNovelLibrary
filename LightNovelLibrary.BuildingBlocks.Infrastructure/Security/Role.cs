@@ -2,19 +2,30 @@
 
 public class Role : IRole
 {
-    public Role()
+    public Role(string category, string name)
     {
+        Category = category;
+        Name = name;
     }
 
-    public Role(IRole child)
+    public Role(string category, string name, IRole child)
     {
+        Category = category;
+        Name = name;
         AddChild(child);
     }
 
-    public Role(ISet<IRole> children)
+    public Role(string category, string name, ISet<IRole> children)
     {
+        Category = category;
+        Name = name;
         AddChildren(children);
     }
+
+    public string Category { get; init; }
+
+    public string Name { get; init; }
+
 
     private readonly ISet<IRole> _children = new HashSet<IRole>();
     public bool Includes(IRole role)
