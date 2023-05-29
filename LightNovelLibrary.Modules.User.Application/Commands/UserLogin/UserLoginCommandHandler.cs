@@ -15,20 +15,22 @@ public class UserLoginCommandHandler : IRequestHandler<UserLoginCommand, Authent
     private readonly IUserRepository _repository;
     private readonly ISecurityKeyProvider _securityKeyProvider;
     private readonly IConfiguration _configuration;
+    private readonly IPasswordManager _passwordManager;
 
     public UserLoginCommandHandler(IUserRepository repository, ISecurityKeyProvider securityKeyProvider,
-        IConfiguration configuration)
+        IConfiguration configuration, IPasswordManager passwordManager)
     {
         _repository = repository;
         _securityKeyProvider = securityKeyProvider;
         _configuration = configuration;
+        _passwordManager = passwordManager;
     }
 
     public Task<AuthenticationTokenDto> Handle(UserLoginCommand request, CancellationToken cancellationToken)
     {
         var user = _repository.GetUserByUserName(request.UserName)
             ?? throw new UserNameNotExistsException(request.UserName);
-        if (user.Password != request.Password)
+        if (!_passwordManager.IsMatch(() => request.Password, user.Password))
         {
             throw new PasswordNotMatchException();
         }
@@ -36,7 +38,7 @@ public class UserLoginCommandHandler : IRequestHandler<UserLoginCommand, Authent
         {
             new Claim(ClaimTypes.Sid, user.UserId.ToString()),
             new Claim(SecurityClaimTypes.PrincipleType, PrincipalType.User),
-            new Claim(ClaimTypes.Role, UserRoles.User.FullName)
+            new Claim(ClaimTypes.Role, UserRoles.User.Name)
         };
         var signingCredentials = new SigningCredentials(_securityKeyProvider.GetSecretKey(),
             SecurityAlgorithms.RsaSha256);
