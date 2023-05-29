@@ -25,6 +25,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.5" />
     <PackageReference Include="Scrutor" Version="4.2.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	<!--特别注意：此依赖必须存在，否则JwtBearer的校验会抛异常-->
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.30.1" />
   </ItemGroup>
 

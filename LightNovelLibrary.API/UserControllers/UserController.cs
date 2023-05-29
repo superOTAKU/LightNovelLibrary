@@ -13,6 +13,8 @@ public class UserController : ControllerBase
     [HttpGet]
     public string GetUserInfo()
     {
+        HttpContext.User.Identities.ToList().ForEach(Console.WriteLine);
+        HttpContext.User.Claims.ToList() .ForEach(Console.WriteLine);
         return "userInfo";
     }
     

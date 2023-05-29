@@ -20,13 +20,7 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, U
         {
             throw new UserNameExistsException(request.UserName);
         }
-        var user = new X.User
-        {
-            UserName = request.UserName,
-            Password = request.Password,
-            CreateTime = DateTime.UtcNow,
-            UpdateTime = DateTime.UtcNow
-        };
+        var user = X.User.RegisterNewUser(request.UserName, request.Password);
         _repository.AddUser(user);
         await _repository.UnitOfWork.CommitAsync(cancellationToken);
         return Unit.Value;

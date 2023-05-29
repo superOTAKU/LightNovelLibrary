@@ -27,6 +27,9 @@ public class RoleAttribute : Attribute, IAuthorizationFilter
         }
         var claims = user.Claims;
         //检查当前拥有的角色是否符合要求
+
+        //FIXME 能否在这里查询数据库？？？
+
         var roles = claims.Where(c => c.Type == ClaimTypes.Role)
             .Select(c => IRole.RoleDictionary[c.Value]);
 
