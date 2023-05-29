@@ -6,6 +6,7 @@ public class Role : IRole
     {
         Category = category;
         Name = name;
+        IRole.Register(category, name, this);
     }
 
     public Role(string category, string name, IRole child)
@@ -13,6 +14,7 @@ public class Role : IRole
         Category = category;
         Name = name;
         AddChild(child);
+        IRole.Register(category, name, this);   
     }
 
     public Role(string category, string name, ISet<IRole> children)
@@ -20,11 +22,14 @@ public class Role : IRole
         Category = category;
         Name = name;
         AddChildren(children);
+        IRole.Register(category, name, this);
     }
 
     public string Category { get; init; }
 
     public string Name { get; init; }
+
+    public string FullName { get => $"{Category}_{Name}"; }
 
 
     private readonly ISet<IRole> _children = new HashSet<IRole>();

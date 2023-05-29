@@ -35,7 +35,8 @@ public class UserLoginCommandHandler : IRequestHandler<UserLoginCommand, Authent
         var claims = new Claim[]
         {
             new Claim(ClaimTypes.Sid, user.UserId.ToString()),
-
+            new Claim(SecurityClaimTypes.PrincipleType, PrincipalType.User),
+            new Claim(ClaimTypes.Role, UserRoles.User.FullName)
         };
         var signingCredentials = new SigningCredentials(_securityKeyProvider.GetSecretKey(),
             SecurityAlgorithms.RsaSha256);

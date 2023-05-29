@@ -1,18 +1,26 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
+﻿using LightNovelLibrary.BuildingBlocks.Infrastructure.Security;
+using LightNovelLibrary.BuildingBlocks.Infrastructure.Security.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LightNovelLibrary.API.UserControllers;
+
 [Route("[controller]")]
 [ApiController]
 public class UserController : ControllerBase
 {
 
-    [Authorize]
+    [PrincipleRole(PrincipalType.User, UserRoleNames.User)]
     [HttpGet]
     public string GetUserInfo()
     {
         return "userInfo";
+    }
+
+    [PrincipleRole(PrincipalType.Admin, AdminRoleNames.Admin)]
+    [HttpGet("admin")]
+    public string GetAdminInfo()
+    {
+        return "adminInfo";
     }
 
 }

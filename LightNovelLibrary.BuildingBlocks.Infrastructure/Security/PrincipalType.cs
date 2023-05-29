@@ -3,7 +3,7 @@
 /// <summary>
 /// 主体类型
 /// </summary>
-public class PrincipleType
+public class PrincipalType
 {
     /// <summary>
     /// 普通用户，浏览小说，点赞，评论等...
