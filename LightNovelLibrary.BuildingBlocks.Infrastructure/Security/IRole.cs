@@ -8,13 +8,8 @@ public interface IRole
 {
 
     #region 属性
-    //角色类型
-    string Category { get; }
-
     //角色名称
     string Name { get; }
-
-    string FullName { get; }
     #endregion
 
     #region 方法
@@ -54,33 +49,6 @@ public interface IRole
             }
             return _roleDictionary;
         }
-    }
-
-    static IRole GetRole(string category, string name)
-    {
-        return RoleDictionary[$"{category}_{name}"];
-    }
-
-    static IRole GetRole(string fullName)
-    {
-        var (category, name) = SplitRoleName(fullName);
-        return GetRole(category, name);
-    }
-
-    static void Register(string category, string name, IRole role)
-    {
-        RoleDictionary[$"{category}_{name}"] = role;
-    }
-
-    static (string, string) SplitRoleName(string role)
-    {
-        var parts = role.Split('_');
-        return (parts[0], parts[1]);
-    }
-
-    static string GetFullName(string category, string name)
-    {
-        return $"{category}_{name}";
     }
 
     #endregion

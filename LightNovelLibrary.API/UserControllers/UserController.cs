@@ -9,14 +9,14 @@ namespace LightNovelLibrary.API.UserControllers;
 public class UserController : ControllerBase
 {
 
-    [PrincipleRole(PrincipalType.User, UserRoleNames.User)]
+    [Role(UserRoleNames.User)]
     [HttpGet]
     public string GetUserInfo()
     {
         return "userInfo";
     }
-
-    [PrincipleRole(PrincipalType.Admin, AdminRoleNames.Admin)]
+    
+    [Role(AdminRoleNames.Admin)]
     [HttpGet("admin")]
     public string GetAdminInfo()
     {

@@ -2,11 +2,12 @@
 
 public class AdminRoles
 {
-    public static readonly IRole Admin = new Role(PrincipalType.Admin, AdminRoleNames.Admin);
+    public static readonly IRole Admin = new Role(AdminRoleNames.Admin);
 }
 
 public class AdminRoleNames
 {
-    public const string Admin = "Admin";
+    public const string Admin = "Admin_Admin";
+
 }
 
