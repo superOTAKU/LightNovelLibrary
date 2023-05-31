@@ -1,6 +1,6 @@
 ﻿namespace LightNovelLibrary.BuildingBlocks.Domain;
 
-public abstract class BaseEntity : IEntity
+public abstract class EntityBase : IEntity
 {
     private IList<IDomainEvent> _events = new List<IDomainEvent>();
 

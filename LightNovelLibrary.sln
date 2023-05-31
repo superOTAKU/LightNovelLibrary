@@ -36,11 +36,36 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightNovelLibrary.Modules.L
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{55B95C4F-0005-494F-924B-974D997D78C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightNovelLibrary.Modules.User.Domain", "LightNovelLibrary.Modules.User.Domain\LightNovelLibrary.Modules.User.Domain.csproj", "{6F02519D-3584-429E-A84D-CC3304E28D18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightNovelLibrary.Modules.User.Domain", "LightNovelLibrary.Modules.User.Domain\LightNovelLibrary.Modules.User.Domain.csproj", "{6F02519D-3584-429E-A84D-CC3304E28D18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightNovelLibrary.Modules.User.Application", "LightNovelLibrary.Modules.User.Application\LightNovelLibrary.Modules.User.Application.csproj", "{E9382501-F401-4E25-A036-97374BADDB20}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightNovelLibrary.Modules.User.Application", "LightNovelLibrary.Modules.User.Application\LightNovelLibrary.Modules.User.Application.csproj", "{E9382501-F401-4E25-A036-97374BADDB20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightNovelLibrary.Modules.User.Infrastructure", "LightNovelLibrary.Modules.User.Infrastructure\LightNovelLibrary.Modules.User.Infrastructure.csproj", "{9F407BCD-4248-43FD-8557-848A04530104}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightNovelLibrary.Modules.User.Infrastructure", "LightNovelLibrary.Modules.User.Infrastructure\LightNovelLibrary.Modules.User.Infrastructure.csproj", "{9F407BCD-4248-43FD-8557-848A04530104}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Admins", "Admins", "{1D58D9D1-98E4-4D76-9BD7-824E5201F5E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightNovelLibrary.Modules.Admins.Domains", "LightNovelLibrary.Modules.Admins.Domains\LightNovelLibrary.Modules.Admins.Domains.csproj", "{C3924B36-7699-419C-A37A-A200EE1C2753}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{D3C19108-EA75-4EDE-A103-318F966296F8}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "LightNovelLibrary.Website", "LightNovelLibrary.Website\", "{A74D3753-696C-426F-BF07-1429DB9AC38F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62470"
+		Debug.AspNetCompiler.PhysicalPath = "LightNovelLibrary.Website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62470\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62470"
+		Release.AspNetCompiler.PhysicalPath = "LightNovelLibrary.Website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62470\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62470"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +113,14 @@ Global
 		{9F407BCD-4248-43FD-8557-848A04530104}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F407BCD-4248-43FD-8557-848A04530104}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F407BCD-4248-43FD-8557-848A04530104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3924B36-7699-419C-A37A-A200EE1C2753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3924B36-7699-419C-A37A-A200EE1C2753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3924B36-7699-419C-A37A-A200EE1C2753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3924B36-7699-419C-A37A-A200EE1C2753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74D3753-696C-426F-BF07-1429DB9AC38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74D3753-696C-426F-BF07-1429DB9AC38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74D3753-696C-426F-BF07-1429DB9AC38F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74D3753-696C-426F-BF07-1429DB9AC38F}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -109,6 +142,10 @@ Global
 		{6F02519D-3584-429E-A84D-CC3304E28D18} = {55B95C4F-0005-494F-924B-974D997D78C7}
 		{E9382501-F401-4E25-A036-97374BADDB20} = {55B95C4F-0005-494F-924B-974D997D78C7}
 		{9F407BCD-4248-43FD-8557-848A04530104} = {55B95C4F-0005-494F-924B-974D997D78C7}
+		{1D58D9D1-98E4-4D76-9BD7-824E5201F5E3} = {D89CC466-3670-4772-8FB3-F987EAA8B8AE}
+		{C3924B36-7699-419C-A37A-A200EE1C2753} = {1D58D9D1-98E4-4D76-9BD7-824E5201F5E3}
+		{D3C19108-EA75-4EDE-A103-318F966296F8} = {56FD7DA3-A314-4D7D-BE3C-7A9ED72F0D82}
+		{A74D3753-696C-426F-BF07-1429DB9AC38F} = {D3C19108-EA75-4EDE-A103-318F966296F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6FDBA43-6717-476B-B6A4-8BB83B29B93C}

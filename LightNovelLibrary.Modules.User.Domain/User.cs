@@ -3,7 +3,7 @@ using LightNovelLibrary.Modules.User.Application.Events;
 
 namespace LightNovelLibrary.Modules.User.Domain;
 
-public class User : BaseEntity, IAggregateRoot
+public class User : EntityBase, IAggregateRoot
 {
     public int UserId { get; set; }
 

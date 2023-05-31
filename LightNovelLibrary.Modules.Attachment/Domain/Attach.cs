@@ -2,7 +2,7 @@
 
 namespace LightNovelLibrary.Modules.Attachment.Domain;
 
-public class Attach : BaseEntity
+public class Attach : EntityBase
 {
     public long Id { get; set; }
 

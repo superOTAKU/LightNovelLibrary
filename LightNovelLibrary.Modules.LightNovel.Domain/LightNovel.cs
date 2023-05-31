@@ -6,7 +6,7 @@ namespace LightNovelLibrary.Modules.LightNovel.Domain;
 /// <summary>
 /// 小说，聚合根
 /// </summary>
-public class LightNovel : BaseEntity, IAggregateRoot
+public class LightNovel : EntityBase, IAggregateRoot
 {
 
     public LightNovel()
@@ -33,6 +33,11 @@ public class LightNovel : BaseEntity, IAggregateRoot
     public ICollection<Edition> Editions { get; set; } = new List<Edition>();
 
     public ICollection<Chaptor> Chaptors { get; set; } = new List<Chaptor>();
+
+    /// <summary>
+    /// 创建此小说的管理员
+    /// </summary>
+    public int createdAdminId;
 
     /// <summary>
     /// 领域逻辑，添加轻小说
